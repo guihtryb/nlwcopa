@@ -3,10 +3,16 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 async function main() {
+  await prisma.guess.deleteMany();
+  await prisma.participant.deleteMany();
+  await prisma.game.deleteMany();
+  await prisma.user.deleteMany();
+  await prisma.poll.deleteMany();
+
   const user = await prisma.user.create({
     data: {
       name: 'Jhon Doe',
-      email: 'jhondude01@gmail.com',
+      email: 'jhondoe@gmail.com',
       avatarUrl: 'https://github.com/guihtryb.png',
     }
   });
@@ -14,7 +20,7 @@ async function main() {
   const poll = await prisma.poll.create({
     data: {
       title: 'Example Poll',
-      code: 'BOL03',
+      code: 'BOL10',
       ownerId: user.id,
       participants: {
         create:
@@ -27,7 +33,7 @@ async function main() {
 
   await prisma.game.create({
     data: {
-      date: '2022-11-10T12:00:00.201Z',
+      date: '2022-11-25T12:00:00.201Z',
       firstTeamCountryCode: 'DE',
       secondTeamCountryCode: 'BR',
     },
@@ -35,7 +41,7 @@ async function main() {
 
   await prisma.game.create({
     data: {
-      date: '2022-11-23T12:00:00.201Z',
+      date: '2022-11-23T13:45:00.201Z',
       firstTeamCountryCode: 'BR',
       secondTeamCountryCode: 'AR',
 
