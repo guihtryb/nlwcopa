@@ -2,6 +2,8 @@
 
 ## Aplicação para criação de bolões - Copa do mundo 2022
 
+- Aplicação Web: https://github.com/guihtryb/nlwcopa-web
+
 <div align="center">
 
 ### 🚧 README em construção! 🚧
