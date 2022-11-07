@@ -20,7 +20,7 @@ async function main() {
   const poll = await prisma.poll.create({
     data: {
       title: 'Example Poll',
-      code: 'BOL10',
+      code: 'BOL01',
       ownerId: user.id,
       participants: {
         create:
@@ -33,18 +33,9 @@ async function main() {
 
   await prisma.game.create({
     data: {
-      date: '2022-11-25T12:00:00.201Z',
-      firstTeamCountryCode: 'DE',
-      secondTeamCountryCode: 'BR',
-    },
-  });
-
-  await prisma.game.create({
-    data: {
-      date: '2022-11-23T13:45:00.201Z',
-      firstTeamCountryCode: 'BR',
-      secondTeamCountryCode: 'AR',
-
+      date: '2022-11-20T13:00:00.201Z',
+      firstTeamCountryCode: 'QA',
+      secondTeamCountryCode: 'EC',
       guesses: {
         create: {
           firstTeamPoints: 2,
@@ -59,6 +50,38 @@ async function main() {
           }
         }
       }
+    },
+  });
+
+  await prisma.game.create({
+    data: {
+      date: '2022-11-21T10:00:00.201Z',
+      firstTeamCountryCode: 'GB',
+      secondTeamCountryCode: 'IR',
+    },
+  });
+
+  await prisma.game.create({
+    data: {
+      date: '2022-11-21T13:00:00.201Z',
+      firstTeamCountryCode: 'SN',
+      secondTeamCountryCode: 'NL',
+    },
+  });
+
+  await prisma.game.create({
+    data: {
+      date: '2022-11-21T13:00:00.201Z',
+      firstTeamCountryCode: 'BR',
+      secondTeamCountryCode: 'SB',
+    },
+  });
+
+  await prisma.game.create({
+    data: {
+      date: '2022-11-21T16:00:00.201Z',
+      firstTeamCountryCode: 'US',
+      secondTeamCountryCode: 'GB',
     },
   });
 }

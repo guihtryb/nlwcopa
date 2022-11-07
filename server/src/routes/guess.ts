@@ -4,7 +4,7 @@ import { prisma } from "../lib/prisma";
 import { authenticate } from "../plugins/authenticate";
 
 export async function guessRoutes(fastify: FastifyInstance) {
-  fastify.get('/guesss/count', async () => {
+  fastify.get('/guesses/count', async () => {
     const count = await prisma.guess.count();
 
     return { count };
